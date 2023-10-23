@@ -5,7 +5,6 @@ const Signup = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {signup, error, isLoading} = useSignup()
-  const [username, setUsername] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -28,11 +27,6 @@ const Signup = () => {
         type="password" 
         onChange={(e) => setPassword(e.target.value)} 
         value={password} 
-      />
-      <input 
-        type="username" 
-        onChange={(e) => setUsername(e.target.value)} 
-        value={username} 
       />
 
       <button disabled={isLoading}>Sign up</button>

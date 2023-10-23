@@ -13,18 +13,14 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  },
-  username: {
-    type: String,
-    required: false
   }
 })
 
 // static signup method
-userSchema.statics.signup = async function(email, password,username) {
+userSchema.statics.signup = async function(email, password) {
 
   // validation
-  if (!email || !password || !username) {
+  if (!email || !password  ) {
     throw Error('All fields must be filled')
   }
   if (!validator.isEmail(email)) {
